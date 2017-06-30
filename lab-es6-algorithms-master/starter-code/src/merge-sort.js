@@ -22,6 +22,8 @@ function sortHalves(left, right) {
   // .concat is to smash all of the arrays together
   // ...maybe there's an ES6 way to do this?
   return array.concat(left.slice()).concat(right.slice());
+  //sprate operator
+  return[...array, ...left, ...right];
 }
 
 module.exports = mergeSort;

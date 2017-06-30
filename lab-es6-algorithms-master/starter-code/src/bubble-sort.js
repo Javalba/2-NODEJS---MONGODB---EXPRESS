@@ -5,7 +5,7 @@ bubbleSort(arr);
 console.log(`array-->${arr}`);
 
 function bubbleSort(array) {
-    let length = array.length;
+    const length = array.length;
     for (let i = (length - 1); i > 0; i--) {
         // Number of passes
         for (let j = (length - i); j > 0; j--) {
@@ -21,4 +21,4 @@ function bubbleSort(array) {
     return array;
 }
 
-//module.exports = bubbleSort;
+module.exports = bubbleSort;
