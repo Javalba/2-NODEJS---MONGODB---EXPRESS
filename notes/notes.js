@@ -126,5 +126,23 @@ Express montar un servidor que nos devuelve paginas web.
 NodeJS es un interprete que puede leer express para poder comunicarse con el browser. Interpreta las peticiones de expres
 y las manda al browser.
 Express puede comunicarse con MongoDB pero utilizaremos mongoose para facilitar esa tarea
+Con mongodb tienes que saber que tipo de peticiones vas a hacer para hacer el modulado de la bbdd.
+Porque sino puede haber inconsistencia
+
+
+Express
+Pido una request devuelve un html. Me devuelve la seccion
+
+nodemon sirve para reiniciar el server express automaticamente
+
+ejsPermite organizar las templates como queramos
+
+partials
+header.ejs.
+
+
+responser.render()
+npm i --save-dev nodemon
+
 
  */
