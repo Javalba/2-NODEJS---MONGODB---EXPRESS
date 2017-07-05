@@ -1,0 +1,34 @@
+{
+ "name": "Javier",
+ "age": 26,
+ "phone": {
+  "personal": "622222222",
+  "work": "967212321",
+  "ext": "967"
+ },
+ "privileges": "admin",
+ "favorites": { "artist": "Picasso", "food": "pizza" },
+ "finished": [ 17, 3 ],
+ "badges": [ "blue", "black" ],
+ "points": [
+    { "points": 85, "bonus": 20 },
+    { "points": 85, "bonus": 10 }
+ ]
+}
+{
+ "name": "Sue",
+ "age": 19,
+ "phone": {
+  "personal": "555-123-123",
+  "work": "555-456-456",
+  "ext": "2342"
+ },
+ "privileges": "user",
+ "favorites": { "artist": "Picasso", "food": "pizza" },
+ "finished": [ 17, 3 ],
+ "badges": [ "blue", "black" ],
+ "points": [
+    { "points": 85, "bonus": 20 },
+    { "points": 85, "bonus": 10 }
+ ]
+}
