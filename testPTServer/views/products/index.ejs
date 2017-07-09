@@ -1,0 +1,16 @@
+<!-- convection -->
+<h1>List of products</h1>
+
+<ul>
+  <% products.forEach( (product) =>{ %>
+    <li>
+      <%= product.name  %> - $
+        <%= product.price %>
+          <a href="/products/<%= product._id %>">Link</a>
+          <a href="/products/<%= product._id %>/edit/">Update</a>
+          <form action="/products/<%= product._id %>/delete/" method="POST">
+          <button type="submit">Delete</button>
+          </form>
+    </li>
+    <% }); %>
+</ul>
