@@ -145,4 +145,33 @@ responser.render()
 npm i --save-dev nodemon
 
 
+HTTP REQUEST
+
+GET : Obtener o enviar información
+
+app.get('/form', () =>{
+
+})
+
+/*POSIBLES FORMAS DE LLAMAR A RES.RENDER*/
+//res.send(`<p>${JSON.stringify(response.value)}</p>`);
+
+/*Le paso el atributo joke a la vista*/
+// .then((response) => {
+//   let data = {
+//     randomJoke: response.value
+//   };
+//
+//   res.render("random", {
+//   "joke": data.randomJoke // le paso atributo joke a la vista <p><%=joke %></p>
+// });
+//
+// res.render("random", data); //le paso el objeto entero y por tanto su atributo será randomJoke  <p><%=randomJoke %></p>
+//
+// let joke2=response.value;
+// res.render("random", {joke2}); //actua como si joke2 fuera el atributo y su valor es su contenido.  <p><%=joke2 %></p>
+
+/*MONGOOSE*/
+/**
+ * npm run start
  */
