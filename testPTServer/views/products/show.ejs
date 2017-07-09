@@ -1,7 +1,11 @@
-<h1><%= product.name %></h1>
+<h1>
+  <%= product.name %>
+</h1>
 <img src="<%= product.imageUrl %>">
 <h3>Price: <span>$<%= product.price %></span></h3>
-<p><%= product.description %></p>
+<p>
+  <%= product.description %>
+</p>
 
 <!-- views/product-reviews/new.ejs -->
 <form action="/products/<%= product._id %>/reviews" method="POST">
@@ -19,6 +23,9 @@
 
 <ul>
   <% product.reviews.forEach( (review) => { %>
-    <li><%= review.author %> - <%= review.stars %> </li>
-  <% }) %>
+    <li>
+      <%= review.author %> -
+        <%= review.stars %>
+    </li>
+    <% }) %>
 </ul>
