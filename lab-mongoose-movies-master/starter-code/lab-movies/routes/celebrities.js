@@ -9,7 +9,6 @@ console.log(`require`);
 /*List all celebs*/
 router.get('/', (req, res, next) => {
 
-console.log(`dentro de la funcion`);
     Celebrity.find({}, (err, celebs) => {
         if (err) {
             next(err); //middleware errors
@@ -22,4 +21,23 @@ console.log(`dentro de la funcion`);
         }
     });
 });
+
+
+/*List one celebrity*/
+router.get('/:id', (req, res, next) => {
+    const celebId = req.params.id;
+    //celeb es el resultado del callback de findById
+    Celebrity.findById(celebId, (err, celeb) => {
+        if (err) {
+            next(err);
+        } else {
+            console.log(celeb);
+            res.render('celebrities/show', {
+                celeb
+            });
+        }
+    });
+});
+
+
 module.exports = router;

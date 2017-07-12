@@ -11,7 +11,7 @@ mongoose.connect('mongodb://localhost:27017/lab-moviesDB');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-const celebrities = require('./routes/celebrities');
+const celebrities = require('./routes/celebrities'); //add celebrities
 
 var app = express();
 
@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
-app.use('/celebrities', celebrities);
+app.use('/celebrities', celebrities); //use celebrities
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
