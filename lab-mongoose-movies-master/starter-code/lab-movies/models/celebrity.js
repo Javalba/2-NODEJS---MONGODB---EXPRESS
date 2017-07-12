@@ -11,5 +11,5 @@ const celebSchema = new Schema({
 
 const Celebrity = mongoose.model('Celebrity', celebSchema);
 
-//Export Celebrity. Every program can read then. 
+//Export Celebrity. Every program can read then.
 module.exports = Celebrity;

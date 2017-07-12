@@ -1,0 +1,17 @@
+<h2>CELEBRITIES</h2>
+<ul>
+    <% celebs.forEach( (e) =>{ %>
+        <li>
+            <div>
+                <%= e.name  %>
+            </div>
+            <div>
+                <%= e.occupation %>
+            </div>
+            <div>
+                <%= e.catchPhrase %>
+            </div>
+        </li>
+        <br>
+        <% }); %>
+</ul>
