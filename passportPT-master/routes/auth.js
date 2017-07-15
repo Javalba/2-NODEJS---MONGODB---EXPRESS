@@ -77,4 +77,12 @@ router.get("/logout", (req, res) => {
   res.redirect("/login");
 });
 
+router.get("/auth/facebook", passport.authenticate("facebook"));
+
+//te da la respuesta 
+router.get("/auth/facebook/callback", passport.authenticate("facebook", {
+  successRedirect: "/secret",
+  failureRedirect: "/"
+})); 
+
 module.exports = router;
