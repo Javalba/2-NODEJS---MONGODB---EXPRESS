@@ -7,13 +7,20 @@ var bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const session = require("express-session");
 const bcrypt = require("bcrypt");
+//passport
 const passport = require("passport");
-const LocalStrategy = require("passport-local").Strategy;
 const flash = require("connect-flash");
+const LocalStrategy = require("passport-local").Strategy;
+const FbStrategy = require('passport-facebook').Strategy;
+const GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
 
+
+//models
 const User = require('./models/user');
 
-mongoose.connect("mongodb://localhost/auth-passport");
+//Connection
+mongoose.connect("mongodb://localhost/auth-passportPT");
+
 
 var index = require('./routes/index');
 const auth = require('./routes/auth');
@@ -73,6 +80,60 @@ passport.use(new LocalStrategy({
   });
 }));
 
+passport.use(new FbStrategy({
+  clientID: "148420795712039",
+  clientSecret: "466544b4e2cb8cf4d9238efdde772e82",
+  callbackURL: "/auth/facebook/callback"
+}, (accessToken, refreshToken, profile, done) => {
+  User.findOne({ facebookID: profile.id }, (err, user) => {
+    if (err) {
+      return done(err);
+    }
+    if (user) {
+      return done(null, user);
+    }
+
+    const newUser = new User({
+      facebookID: profile.id
+    });
+
+    newUser.save((err) => {
+      if (err) {
+        return done(err);
+      }
+      done(null, newUser);
+    });
+  });
+
+}));
+
+passport.use(new GoogleStrategy({
+  clientID: "60359403657-2kb369umburkbc39rl0stodcc4vvuj6q.apps.googleusercontent.com",
+  clientSecret: "wPvEsVlevR0t-mB5aV-AZ5Gn",
+  callbackURL: "/auth/google/callback"
+}, (accessToken, refreshToken, profile, done) => {
+  User.findOne({ googleID: profile.id }, (err, user) => {
+    if (err) {
+      return done(err);
+    }
+    if (user) {
+      return done(null, user);
+    }
+
+    const newUser = new User({
+      googleID: profile.id
+    });
+
+    newUser.save((err) => {
+      if (err) {
+        return done(err);
+      }
+      done(null, newUser);
+    });
+  });
+
+}));
+
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -102,3 +163,6 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+
+/*userID, se guarda el id de facebook*/ 
