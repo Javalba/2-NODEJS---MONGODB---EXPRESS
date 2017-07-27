@@ -175,3 +175,43 @@ app.get('/form', () =>{
 /**
  * npm run start
  */
+
+
+ /*
+ MAPS MONGOOSE
+ Poligonos y multipoligonos.
+ mongo necesita la estructura del GEOJSON
+ 
+ // restaurant.js
+const RestaurantSchema = new Schema({
+  name: String,
+  description: String,
+  location: { type: { type: String }, coordinates: [Number] }
+});
+RestaurantSchema.index({ location: '2dsphere' });
+
+en un post redirect
+
+html.index - llamadas ajax le cargas el contenido
+
+index.js - mediante json - 
+
+controlador 
+
+georeference pones direccion y te da lat y lon
+
+ enctype="multipart/form-data"> en que forma envias los datos
+ en la bbdd nos guardamos la ruta de la imagen
+ se guardan en uploads
+
+ heroku logs 
+ 
+ .env fichero oculto no hay que subirlo. Variables de enterono ocultas, no son publicas
+
+populate:
+obtener los datos anidados de un esquema
+id
+name
+stories:[1,2,3,4]
+
+ */
