@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Ironfunding</title>
-    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <script src="/bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
-  </head>
-  <body>
-    <div class="main-container">
-      <!-- layouts/main-layout.ejs -->
-  <nav class="navbar">
+
+<head>
+  <meta charset="utf-8">
+  <title>Ironfunding</title>
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <script src="/bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <div class="main-container">
+    <!-- layouts/main-layout.ejs -->
+    <nav class="navbar">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#home-nav" aria-expanded="false">
@@ -36,8 +38,13 @@
                 <span class="glyphicon glyphicon-search"></span>
               </a>
             </li>
-            <li><a href="#">Login</a></li>
+            <li><a href="/login">Login</a></li>
             <li><a href="/signup">Signup</a></li>
+            <li>
+              <form action="/logout" method="POST">
+                <button class="btn btn-link btn-logout" type="submit">Logout</a>
+              </form>
+            </li>
             <li><a href="#">Profile</a></li>
           </ul>
         </div>
