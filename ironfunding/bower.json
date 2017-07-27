@@ -1,0 +1,21 @@
+{
+  "name": "ironfunding",
+  "description": "ironfunding",
+  "main": "",
+  "authors": [
+    "Javier Armero <Javalba90@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Javalba/2-NODEJS---MONGODB---EXPRESS",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "bootstrap": "^3.3.7"
+  }
+}
