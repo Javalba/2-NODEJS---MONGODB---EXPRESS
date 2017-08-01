@@ -1,5 +1,3 @@
-// app.js
-
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
@@ -21,8 +19,9 @@ const MongoStore = require('connect-mongo')(session);
 mongoose.connect('mongodb://localhost:27017/ironfunds-development');
 
 //routes path's
-const authRoutes = require('./routes/authentication.js');
+const authRoutes = require('./routes/authentication');
 const index = require('./routes/index');
+const campaign = require('./routes/campaigns');
 
 
 const app = express();
@@ -130,6 +129,7 @@ app.use((req, res, next) => {
 
 app.use('/', index);
 app.use('/', authRoutes);
+app.use('/', campaign);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
